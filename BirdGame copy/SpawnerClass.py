@@ -13,7 +13,7 @@ class Spawner():
         self.enemies_list = pygame.sprite.Group()
 
         #spawn patterns based on amount of time in game
-        time.clock()
+        time.perf_counter()
 
         #time at which the spawner last spawned an enemy
         self.last_spawn = 0.0
@@ -33,7 +33,7 @@ class Spawner():
     #spawns enemies at the appropriate time
     def spawnChk(self):
         #gets current time
-        now = time.clock()
+        now = time.perf_counter()
 
         #time since last spawn
         time_diff = now - self.last_spawn
@@ -115,7 +115,7 @@ class Spawner():
 
     #spawns upgrade enemies at apropriate times
     def weapSpawnCheck(self):
-        now = time.clock()
+        now = time.perf_counter()
 
         spawnRate = 30
         time_diff = now - self.lastWepSpawn
